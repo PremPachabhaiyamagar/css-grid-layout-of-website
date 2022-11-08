@@ -1,0 +1,191 @@
+/* Css variables */
+:root{
+  --primary:#ddd;
+  --dark:#333;
+  --light:#fff;
+  --shadow:0 1px 5px rgba(104,104,104,0.8);
+}
+html{
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--dark);
+}
+body
+{
+background: #ccc;
+margin: 30px 50px ;
+line-height: 1.4;
+}
+/* styling button */
+.btn{
+  background: var(--dark);
+  padding: .6rem 1.3rem;
+  color: var(--light);
+  border:0; 
+  text-decoration: none;
+  border-radius: 5px;
+}
+.btn:hover{
+  background: var(--light);
+  color: var(--dark);
+}
+img{
+  max-width: 100%;
+}
+/* main-container */
+.wrapper{
+  display: grid;
+  grid-gap: 20px;
+}
+/* Navigation */
+.main-nav ul{
+  display: grid;
+  grid-gap: 20px;
+  padding: 0;
+  list-style: none;
+  grid-template-columns:repeat(4, 1fr);
+}
+ nav ul li a{
+  text-decoration: none;
+  background: var(--primary);
+  color: var(--dark);
+  padding:.8rem;
+  display: block;
+  box-shadow: var(--shadow);
+  text-align: center;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+}
+nav ul li a:hover{
+  background: var(--dark);
+  color: var(--light);
+}
+/* top-container */
+.top-container{
+  display: grid;
+  grid-gap: 20px;
+  grid-template-areas: 
+  "showcase showcase top-box-a"
+  "showcase showcase top-box-b";
+}
+.showcase{
+  grid-area: showcase;
+  min-height: 400px;
+  padding: 3rem;
+  background-image: url(pexels-negative-space-34140\ \(1\).jpg);
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity:.8;
+  box-shadow: var(--shadow);
+}
+.showcase h1{
+  color: var(--light);
+  font-size: 4em;
+  margin-bottom: 0;
+}
+.showcase p{
+  color: var(--primary);
+  font-size: 1.2rem;
+}
+.top-box{
+  background: var(--primary);
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+}
+.top-box .price{
+  font-size: 2.5rem;
+}
+.top-box-a{
+  grid-area: top-box-a;
+}
+.top-box-b{
+  grid-area: top-box-b;
+} 
+/* boxes section */
+.boxes{
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.box{
+  background: var(--primary);
+  box-shadow: var(--shadow);
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  padding:1.5rem 2rem;
+}
+/* info section */
+.info{
+  display: grid;
+  grid-gap: 30px;
+  background: var(--primary);
+  box-shadow: var(--shadow);
+  padding: 3rem;
+  grid-template-columns: repeat(2,1fr);
+}
+/* portfolio section */
+.portfolio{
+ display: grid;
+ grid-gap: 20px;
+ grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+ margin-top: 10px;
+}
+.portfolio img{
+  width: 100%;
+  box-shadow:var(--shadow);
+}
+/* Footer */
+footer{
+  background: var(--dark);
+  color: var(--light);
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1rem;
+}
+/* media query for the devices below 700px */
+@media (max-device-width:700px){
+  .main-nav ul{
+    grid-template-columns: 1fr;
+
+  }
+  .top-container{
+    grid-template-areas:
+    "showcase showcase"
+    "top-box-a top-box-b"
+    ;
+  }
+  .showcase{
+    grid-area: showcase;
+  }
+  .showcase h1{
+    font-size: 2.5rem;
+  }
+  .info{
+   grid-template-columns: 1fr;
+  }
+  .info .btn{
+    display: block;
+    text-align: center;
+    margin: auto;
+  }
+}
+/* media query for the devices less than 500px */
+@media(max-device-width:500px){
+ .top-container{
+  grid-template-areas:
+  "showcase"
+  "top-box-a"
+  "top-box-b"
+  ;
+ }
+}
